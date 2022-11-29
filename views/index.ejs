@@ -8,31 +8,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Todo List: </h1>
-    <ul class="todoItems">
-    <% for(let i=0; i < items.length; i++) {%>
-        <li class="item">
-            <% if(items[i].completed === true) {%>
-                <span class='completed'><%= items[i].thing %></span>
-            <% }else{ %>
-                <span><%= items[i].thing %></span>
+
+<body> <!-- Body for content of page -->
+    <h1>Todo List: </h1> <!-- Heading of page -->
+    <ul class="todoItems"> <!--Unordered list with assigned class of todoItems-->
+    <% for(let i=0; i < items.length; i++) {%> <!-- Use EJS to start a FOR loop-->
+        <li class="item"> <!-- List item with class 'item' -->
+            <% if(items[i].completed === true) {%> <!-- Checks if item index is completed -->
+                <span class='completed'><%= items[i].thing %></span> <!-- If it is completed, print item index to dom with class completed -->
+            <% }else{ %> <!-- else statement -->
+                <span><%= items[i].thing %></span> <!-- Print item index to dom without a class -->
             <% } %>    
-            <span class='fa fa-trash'></span>
+            <span class='fa fa-trash'></span> <!-- Fonticon trash -->
         </li>
     <% } %>
     </ul>
 
-    <h2>Left to do: <%= left %></h2>
+    <h2>Left to do: <%= left %></h2> <!-- -->
 
     <h2>Add A Todo:</h2>
 
